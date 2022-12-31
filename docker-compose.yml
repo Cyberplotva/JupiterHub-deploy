@@ -4,4 +4,7 @@ services:
     ports:
       - 80:8000
     volumes:
-      - ./jupyterhub_home:/home
+      - jupyterhub-home-dir:/home
+
+volumes:
+  jupyterhub-home-dir:
