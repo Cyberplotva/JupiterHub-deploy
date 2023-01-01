@@ -15,7 +15,7 @@ RUN useradd -m -d /home/admin admin
 COPY config.py .
 
 ARG NOTEBOOKS_FROM=./empty_folder
-ARG HUB_PATH=/home/admin/preexisting_notebooks
+ARG HUB_PATH=/home/admin
 COPY ${NOTEBOOKS_FROM} ${HUB_PATH}
 
 CMD [ "jupyterhub", "-f", "config.py"]
