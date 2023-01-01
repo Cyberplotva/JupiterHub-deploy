@@ -18,6 +18,8 @@ RUN useradd -m -d /home/admin admin
 ARG NOTEBOOKS_FROM=./empty_folder
 ARG HUB_PATH=/home/admin
 COPY ${NOTEBOOKS_FROM} ${HUB_PATH}
+# Чтобы можно было бы изменять и добавлять файлы из/в HUB_PATH. Без этого недостаточно прав
+RUN chmod 777 ${HUB_PATH}
 
 # Запустить Jupyter Hub, использую confing.py
 COPY config.py .
